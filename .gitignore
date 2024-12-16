@@ -1,1 +1,4 @@
-build/
+/build/
+/gost-tools
+__debug_bin*
+/.vscode
