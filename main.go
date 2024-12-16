@@ -9,6 +9,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	VERSION = "0.0.0-PLACEHOLDER"
+)
+
 func main() {
 	config := &cobra.Command{
 		Use:   "config",
@@ -35,7 +39,7 @@ func main() {
 	config.Flags().BoolP("json", "j", false, "use json instead of yaml")
 	config.MarkFlagRequired("services")
 
-	root := &cobra.Command{Use: os.Args[0]}
+	root := &cobra.Command{Use: os.Args[0], Version: VERSION}
 	root.AddCommand(config)
 
 	if err := root.Execute(); err != nil {
