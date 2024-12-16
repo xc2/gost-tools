@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -20,7 +19,7 @@ func main() {
 			json, _ := cmd.Flags().GetBool("json")
 			c, err := gost_cmd.BuildConfigFromCmd(services, nodes)
 			if err != nil {
-				fmt.Println(err)
+				log.Fatalln(err)
 				return
 			}
 			if json {
